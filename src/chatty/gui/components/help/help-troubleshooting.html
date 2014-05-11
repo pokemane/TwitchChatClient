@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<title>Chatty Help - Troubleshooting</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+<body>
+    <div id="backlink"><a href="help.html">Back to main help page</a></div>
+    <h1><a name="top">Troubleshooting</a></h1>
+    
+    <ul>
+        <li><a href="#performance">Bad performance / OutOfMemoryError</a></li>
+        <li><a href="#jintellitype">Could not load JIntellitype.dll</a></li>
+        <li><a href="#timeout">People are shown as timed out in several channels at once</a></li>
+        <li><a href="#login">Can't connect because the login failed</a></li>
+        <li><a href="#tokenDeleted">Login data (access token) was determined invalid and was removed.</a></li>
+        <li><a href="#start">Chatty won't start</a></li>
+    </ul>
+    
+    <h2>
+        <a name="performance">Bad performance / OutOfMemoryError</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>If you experience a laggy interface, this can have several reasons. For
+    one some chat channels are very busy and depending on your computer, this
+    may not be easy to handle. Managing the userlist can cost a lot of
+    performance in large channels because of having to react to hundreds of
+    users joining or leaving at once. It can help to temporarily
+    <a href="help.html#ignoreJoinsParts">ignore joins/parts</a> in this case.</p>
+    
+    <p>You may also want to check if Irc logging is enabled in the Debug Window
+        (<code>Expert - Debug window - Checkbox: Irc log</code>), which should
+    be disabled by default, but can lower performance if checked.</p>
+    
+    <h2>
+        <a name="jintellitype">Could not load JIntellitype.dll</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>If you get this error, you started Chatty with Hotkey support, but it
+    couldn't load the library (.dll) necessary to register hotkeys. This can
+    either mean that the file isn't stored where the program can find it or you
+    have the wrong version for your version of Java (32bit or 64bit Java need
+    different versions of the .dll).</p>
+    
+    <p>First of all, you currently only need Global Hotkey support when you want
+        to run commercials using a global hotkey. If you don't, you can just ignore
+        that message or download the version of Chatty without Hotkey support.
+    </p>
+    <p>
+        Otherwise, find out if you have the 64bit or 32bit version
+        of Java, then check if you downloaded the matching Version of Chatty.
+        Enter <code>/wdir</code> in Chatty to find out what your working directory
+    is and make sure the JIntellitype.dll is in there.</p>
+    
+    <p>If you created a shortcut to open Chatty that links to Java, then your
+    working directory may be the folder where Java is in, instead of the folder
+    where the Chatty.jar is in. In Windows, you can change the Working Directory
+    in the shortcut settings by changing what is defined under <code>Run in</code>.</p>
+    
+    <div class="moreInfo">Related information: <a href="help-guide_folders.html">Chatty directories and files</a></div>
+    
+    <h2>
+        <a name="timeout">People are shown as timed out in several channels at once</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>If a user is timed out in one channel, Chatty may show the timeouts in
+    other channels as well. This is because there is no channel associated with
+    timeouts or bans in Twitch Chat, so the program has to guess in which
+    channel the timeout occured. See also: <a href="help.html#channels">Joining more than one channel</a>.</p>
+    
+    
+    <h2>
+        <a name="login">Can't connect because the login failed</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>If you repeatedly get disconnected because of possibly invalid login
+    data, please open the Connect Dialog and choose <code>Configure login.. - Verify login</code>.
+    This will send a request to Twitch to check if the access token is valid.
+    If the login data is valid, then Twitch may just have temporary problems
+    and you should try again later. The same goes for when the check itself
+    fails because it can't reach the Twitch API.</p>
+    <p>If the login data isn't valid, you can just remove the login and request
+        new login data. Also see the <a href="#tokenDeleted">next section</a>
+    for more information about invalid logins.</p>
+    
+    
+    <h2>
+        <a name="tokenDeleted">Login data (access token) was determined invalid and was removed.</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>If you get this message, then Chatty has performed an automatic check
+    of the login data and determined that is was invalid.</p>
+    <p>Reasons why the login data (access token) may be invalid:</p>
+    <ul>
+        <li>You have requested new login data for the same Twitch Account from another instance of Chatty,
+            for example on another Computer, which has automatically invalidated
+            the previously requested login data (access token).</li>
+        <li>You have just requested login data and something went wrong, or
+        it wasn't loaded properly from the settings.</li>
+        <li>The token was invalidated for some other reason.</li>
+    </ul>
+    <p>How to proceed:</p>
+    <ul>
+        <li>Go to <code>Main - Connect - Request/Configure login ..</code> and
+        get new login data. Disconnect first if you are connected.</li>
+        <li>If you indeed want to use more than one instance of Chatty with the
+        same account, check out <a href="help-guide1.html">this guide</a>.</li>
+    </ul>
+    
+    <h2>
+        <a name="start">Chatty won't start</a>
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p>If you try to start the Chatty.jar directly, first check if .jar files
+    are associated with Java, or maybe some other program like WinRAR.</p>
+    <p>If you are sure that the Chatty.jar is actually started with Java, but
+    no program appears, it may be that an error occured before the GUI could be
+    created. You may find helpful information in the <code>&lt;user_dir&gt;\.chatty\debug.log</code>
+    file (e.g. <code>C:\Users\&lt;username&gt;\.chatty\debug.log</code>). Sometimes there
+    are several debug.log files, then just look for the newest one. It is overwritten
+    every time you start Chatty. You can also try running Chatty from the commandline to
+    get possible errormessages. Open a commandline in the folder where the Chatty.jar
+    is and enter: <code>java -jar Chatty.jar</code></p>
+    
+    <h2>
+        If you found a bug or have a suggestion..
+        <a href="#top" class="top">[back to menu]</a>
+    </h2>
+    <p><a href="help.html#contact">Contact</a> me please.</p>
+</body>
+</html>
+    
+    
+    
+    
+    
+    
+    
+    

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+	<title>Chatty Release Information</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <style type="text/css">
+            pre {
+                border-left: 1px solid #AAAAAA;
+                padding: 10px;
+                margin-top: 5px;
+                color: #222222;
+            }
+        </style>
+<body>
+    <div id="backlink"><a href="help.html">To main help page</a></div>
+    <h1><a name="top">Release Information</a></h1>
+    
+    <p>
+    <a href="#0.6.2">0.6.2</a> |
+    <a href="#0.6.1">0.6.1</a> |
+    <a href="#0.6">0.6</a> |
+    <a href="#0.5.1">0.5.1</a> |
+    <a href="#0.5">0.5</a> |
+    <a href="#0.4">0.4</a> |
+    <a href="#0.3">0.3</a>
+    </p>
+    
+    <p>This page shows important information about new versions as well as the
+    full list of changes.</p>
+    
+    
+<h2>
+    <a name="0.6.2">Version 0.6.2 (This one!) (2014-04-20)</a>
+    <a href="#top" class="top">[back to top]</a>
+</h2>
+    <h3>Important Information</h3>
+    <ul>
+        <li>The port setting has changed. If you have changed the port setting
+        to another value before, it will be reverted to the new default with
+        this update.</li>
+        <li>With the introduction of group chat, Twitch apparently removed the
+        "xy just subscribed" messages from the chat version Chatty uses. There
+        was also a new version introduced that still has those messages and is
+        generally better (association of bans/info messages/subscribers to
+        channels), but it lacks joins/parts, which means no joins/parts can be
+        shown and the userlist will only contain those people who have said
+        something.<br />
+        <br />
+        If you don't care about showing joins/parts and you don't care about
+        a correct/complete userlist, then it may be beneficial for you to
+        enable the <code>Chat Client Version 3</code> option in the Settings
+        Dialog under <code>Advanced</code>. <a href="help-settings.html#Advanced-Other">More information..</a></li>
+    </ul>
+    <h3>Full Changelog</h3>
+<pre>
+New features:
+- Admin Dialog: Select previously used or favorited stream status (title/game)
+  from the presets dialog for your title changing convenience
+- Optional new chat version that has no joins/parts but has better channel
+  association for bans/timeouts/subscribers and "xy just subscribed" message
+- Added /slap command due to S'ome demand
+- Improved connecting to chat (automatically trying different servers/ports)
+- Added more shortcuts and stuff
+- Added option to rejoin currently open channels when connecting
+
+Changes:
+- Moved Ignore joins/parts option to settings dialog
+- Some small improvements
+- Updated help
+
+Bugfixes:
+- Hopefully fixed synchronization error
+- Fixed error when editing game favorites
+- Fixed error when no stream title is set
+</pre>
+<h2>
+    <a name="0.6.1">Version 0.6.1 (2014-03-24)</a>
+    <a href="#top" class="top">[back to top]</a>
+</h2>
+<h3>Full Changelog</h3>
+<pre>
+New features:
+- Added Addressbook to associate name with categories, that can be referenced
+  from usercolor settings and highlight settings
+- Added usercolor settings to locally assign custom usercolors
+- Option to restore dialog positions/reopen dialogs on start
+
+Changes:
+- Improved setting for timeout buttons/added to GUI, improved timeout messages
+- Highlight: Default username now matching on word bounds, added word bounds
+  matching prefixes, added highlight next messages
+- Reorganized settings dialog to accomondate new settings/features
+- Updated help
+- Parse /mods response to make users mods
+- Improved Named Colors panel in color chooser
+- Added Ctrl-Shift-Tab to switch to previous channel
+- Added server/port settings
+- Added setting to enable/disable stream status messages in chat
+
+Bugfixes:
+- Fixed FrankerFaceZ mod icon parsing to reflect recent changes
+- Fixed parsing error
+- Fixed userstats max length
+- Added scrolling to "Removed Streams.." list
+</pre>
+    
+    
+<h2>
+    <a name="0.6">Version 0.6 (2014-02-13)</a>
+    <a href="#top" class="top">[back to top]</a>
+</h2>
+<h3>Important Information</h3>
+<ul>
+    <li>The sound volume values have been changed, you should readjust the
+        volumes when you use this feature.</li>
+    <li>Chatlog is disabled by default, enable it in the settings if you
+        want to use it.</li>
+</ul>
+<h3>Full Changelog</h3>
+<pre>
+New features:
+- New more flexible notifications that replace the system tray notifications
+  (you can still switch back to them though)
+- Added chat logging to record messages and stream/chat infos to file
+- Added Spam Protection
+- Admin Dialog: Relative times, use own channel when no channel is joined,
+  last commercial run time, improved several channels support, dialog
+  not modal anymore, configurable commercial run delay, added help
+- Added message sound, load sound file names from sounds folder, improved
+  sound settings, changed volume values (you may need to adjust your volumes)
+- Check if connection was lost a bit faster depending on previous activity
+- Added new error dialog
+- Show important release information on first startup of new version
+
+Changes:
+- Changed shutdown process
+- Improved settings dialog (help, icons, components, restart required
+  warning)
+- Remove additional whitespace from incoming messages
+- Replace some special html character codes in incoming messages
+- Default userlist width setting, userlist width 0 now possible
+- Always output stream status on join (not only if it's new)
+- Improved help
+- Added setting to enable (and thus disable) open url prompts
+- Added Copy URL option to url prompt
+- Added setting to highlight own messages (always enabled before)
+- Added setting to change the tabs order (join order/alphabetical)
+- Added context menu item to clear the highlights dialog
+- Fixed bug in ViewerHistory when item was still hovered when channel
+  was changed
+- Added help window icon
+- Count number of mods on /mods-command response
+- Prevent auto-scrolling when search is active
+- Added speedrun.tv option for stream urls
+</pre>
+
+
+<h2>
+    <a name="0.5.1">Version 0.5.1 (2013-12-17)</a>
+    <a href="#top" class="top">[back to top]</a>
+</h2>
+<h3>Full Changelog</h3>
+<pre>Changes:
+- FrankerFaceZ: Show custom mod icons (available in some channels)
+- FrankerFaceZ settings, Emoticons/Icon settings seperate
+- Prevent dialogs that can open automatically (error messages) from
+  stealing focus
+- Added chat buffer size setting
+- Added setting to enable/disable mod/unmod messages
+- Added some shortcuts
+- Added command to show working directory
+- Added color preset
+- Improved help
+- Improved viewer history (fixed times per channel)
+- Improved debug output
+- Added command/guide in case getting login data doesn't work
+
+Bugfixes:
+- Fixed error in Viewer history
+</pre>
+
+
+<h2>
+    <a name="0.5">Version 0.5</a> (2013-12-05)
+    <a href="#top" class="top">[back to top]</a>
+</h2>
+<h3>Import Information</h3>
+<ul>
+    <li>With Version 0.5, Chatty can notify you about streams you follow and
+        show a list of them. You have to request
+        new login data containing <code>&lt;Read user info&gt;</code> access to
+        be able to use that. Go to 
+        <code>&lt;Main - Connect - Configure login..&gt;</code>, remove the
+        login and request it again.</li>
+    <li>You can enable/disable this feature under
+        <code>&lt;Main - Settings - Notifications&gt;</code> if you have the
+        necessary access.</li>
+</ul>
+<h3>Full Changelog</h3>
+<pre>
+New features:
+- Get notified when streams you follow go online (requires
+  &lt;Read user info&gt; access, which wasn't even in Chatty before, so you'll
+  have to request new login data)
+- View a list of live streams (you followed or whose channel you are in)
+- FrankerFaceZ emoticons
+- Added search, allowing you to find text in the current chat window
+- Deleted messages (from timeouts/bans) now get shortened to a maximum length,
+  or you can use the previous behaviour or let the whole message be replaced
+  with &lt;message deleted&gt;
+- Change the displayed time range in Viewer History
+- Automatically check if the login is valid, if it is suspected not to be
+- Clickable links in Channel Info Dialog (also turns #srl-abcd into a race link)
+- Cycle between tabs with Ctrl+TAB
+
+Changes:
+- Updated Help
+- Changed Settings Dialog Layout
+- Detect subscribers even when in more than one channel (may not work correctly
+  always, but it's a better guess than before)
+
+Bugfixes:
+- Changed color of inputbox cursor to foreground color
+- Possibly made emoticon image loading a bit more reliable, but it's hard to
+  tell what happens when the loading fails
+- Handle long URLs in the URL open dialog better
+</pre>
+
+
+<h2>
+    <a name="0.4">Version 0.4 (2013-11-16)</a>
+    <a href="#top" class="top">[back to top]</a>
+</h2>
+<h3>Full Changelog</h3>
+<pre>
+New features:
+- Added version checker to inform you about new versions of Chatty
+- Added window icon
+- Added colors to viewer history to indicate stream status changes, hovering
+  displays stream title/game at that time (in addition to viewercount/time)
+- Stream information is now requested for all channels you have currently joined
+- Added tray notifications for highlighted messages and stream status changes
+- Added sound notifications for highlighted messages and stream status changes
+- Added some commandline parameters, settings and context menu entries
+
+Changes:
+- Nicks in JOIN/PART/MOD/UNMOD lines now clickable
+- Settings now saved in seperate files for general settings, login data and
+  history/favorites
+- Fixed tab colors, added indicator for new stream status
+- Added delay for global hotkey so it doesn't repeat as much if kept pressed
+- Updated and improved help
+- Added Mod/Unmod buttons to user dialog (only in your own channel)
+
+Bugfixes:
+- Fixed bug where a status change could reopen a tab that couldn't be closed
+- Improved error handling for API responses
+- Fixed bug where focus sometimes wouldn't be on inputbox when changing tabs or
+  clicking in channel
+</pre>
+
+
+<h2>
+    <a name="0.3">Version 0.3 (2013-09-19)</a>
+    <a href="#top" class="top">[back to top]</a>
+</h2>
+<h3>Full Changelog</h3>
+<pre>
+New features:
+- Added Admin Dialog that let's you change the title/game of your stream
+  and run commercials (optional global hotkey for running commercials)
+- Added Channel Favorites/History that automatically saves channels you joined
+  and also allows you to add favorites (history can be deactivated in the
+  settings)
+- Added Highlight system that makes a message appear in another color if defined
+  keywords are found in it and/or it was send by a defined user (defaults to
+  always highlight your own name)
+- Added join dialog
+- Messages from user "twitchnotify" as info messages (when someone subscribed)
+- Added Warning when joining more than one channel
+- Added context menus for nicks/links/channel/tabs
+- Restore window position from last session
+- Better debugging and error handling
+- Automatically scroll down after 30s of inactivity when being scrolled up
+
+Changes:
+- User Info Dialog: Auto-update message history, show bans, show channel context
+- Lowered stream info (title, game, viewercount) update delay to 120s
+- Improved default user colors
+- Emoticons that contain only word characters match at word boundaries (to match
+  the new behaviour in Twitch Webchat)
+
+New settings:
+- Option for capitalized names
+- Option to show ban message (.. has been banned from talking), defaults to not
+  showing it
+- Color GUI settings (with default and dark preset)
+- And of course quite a few for the new features/bugfixes
+
+Bugfixes:
+- Fixed bug where channels would re-open without being
+  able to close them
+- Fixed bug where the userlist wasn't loaded correctly on join
+  when the channel was joined before in the same session
+- Disabled Direct3D Hardware Acceleration by default to possibly
+  fix Chatty appearing completely black under certain circumstances
+</pre>
+
+<p>First published version was 0.2 so changelog starts from version 0.3.</p>
+</body>
+</html>
+
