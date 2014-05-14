@@ -81,7 +81,7 @@ public class Connection implements Runnable {
             return;
         }
         // At this point the connection succeeded, but not registered with the
-        // IRC server (wich is often called "connected" in this context)
+        // IRC server (which is often called "connected" in this context)
         
         connected = true;
         irc.connected(socket.getInetAddress().toString(),address.getPort());
