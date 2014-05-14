@@ -780,8 +780,10 @@ public class TwitchClient extends Irc {
         String serverDefault = settings.getString("serverDefault");
         String serverTemp = settings.getString("server");
         return serverTemp.length() > 0 ? serverTemp : serverDefault;
+
     }
-    
+    //TODO make these grab the Group Server info as well
+
     private String getPorts() {
         String portDefault = settings.getString("portDefault");
         String portTemp = settings.getString("port");

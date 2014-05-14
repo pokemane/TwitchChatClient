@@ -17,3 +17,11 @@ twitch client.iml
 hs_err_pid*
 >>>>>>> origin/master
 out/production/src/chatty/gui/app_16.png
+out/
+addressbook
+debug.log
+emoticons
+favoritesAndHistory
+login
+settings
+statusPresets
