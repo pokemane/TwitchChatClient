@@ -16,7 +16,7 @@ public class Chatty {
      * Enables debug commands as well as some other behaviour that allows
      * debugging. Should be disabled for a regular release.
      */
-    public static final boolean DEBUG = false;
+    public static final boolean DEBUG = true;
     
     /**
      * Enables the hotkey feature for running commercials (windows only).
@@ -35,12 +35,13 @@ public class Chatty {
      * If you compile this program yourself, you should create your own client
      * id on http://www.twitch.tv/kraken/oauth2/clients/new
      */
-    public static final String CLIENT_ID = <...>;
+    public static final String CLIENT_ID = "tukb2mp2fq2nzyck5n1le64fjuae67x";
     
     /**
      * The redirect URI for getting a token.
      */
     public static final String REDIRECT_URI = "http://127.0.0.1:61324/token/";
+    //public static final String REDIRECT_URI = "http://localhost:61324";
     
     /**
      * Version number of this version of Chatty
@@ -51,7 +52,7 @@ public class Chatty {
      * Enable Version Checker (if you compile and distribute this yourself, you
      * may want to disable this)
      */
-    public static final boolean VERSION_CHECK_ENABLED = true;
+    public static final boolean VERSION_CHECK_ENABLED = false;
     
     /**
      * The regular URL of the textfile where the most recent version is stored.
@@ -68,7 +69,7 @@ public class Chatty {
     /**
      * If true, use the current working directory to save settings etc.
      */
-    private static boolean useCurrentDirectory = false;
+    private static boolean useCurrentDirectory = true;
     
     /**
      * Parse the commandline arguments and start the actual chat client.

@@ -16,3 +16,4 @@ twitch client.iml
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 >>>>>>> origin/master
+out/production/src/chatty/gui/app_16.png

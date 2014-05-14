@@ -157,7 +157,7 @@ public class Webserver implements Runnable {
     }
     
     /**
-     * Handles a single connectino to a client in it's own Thread.
+     * Handles a single connection to a client in it's own Thread.
      */
     class WebserverConnection implements Runnable {
 
